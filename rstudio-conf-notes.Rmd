@@ -1,0 +1,82 @@
+---
+title: "rstudio::conf 2019 notes"
+author: "Tyler Bradley"
+date: "1/17/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Thursday Keynote Address
+
+## Joe Cheng - Shiny in production
+
+  - production - sofware environments that are used and relied on by real users, with real consequences if things go wrong
+  - prod environment - includes server, connect, and databases
+  - best practives includes a staging system that is identical to your procudtion environment
+  - production goals:
+      * keep it up
+      * keep it safe
+      * keep it correct
+      * keep it snappy
+      
+  - can shiny be used in production?
+    * 2015 - yes it is possible
+    * 2019 - yes it is easy
+    
+  - challenges for shiny in production
+    * cultural challenges:
+        - shiny apps are developed by R users who arent software engineers
+        - dont know best practices for deployment to production
+        
+    * organizational challenges:
+        - IT and management are skeptical
+        - IT skew towards conservative
+        - Skeptical of data scientists creating production artifacts
+        - skeptical of technolofies they haven't heard of
+        - Engineering department may not be on your side
+    
+    * Technical challenges
+        - shiny makes developing apps easier but doesn't address automated testing, load testing, profiling, and deployment
+        - R can be slow and is single threaded
+        
+  - New tools for shiny in production
+    * RStudio Connect
+    * shinytest (R package)
+    * shinyloadtest (R package)
+    * profvis - profiler for R
+    * Plot caching - Dramatically speed up repeated plots
+    * Async - last resort for dealing with slow operations
+    
+    
+* Performance workflow
+  1. Use shinyloadtest to see if its fast enough
+  2. If not, use profvis to see whats making it slow
+  3. Optimize
+    i. Move work out of shiny (very often)
+    ii. Make code faster (very often)
+    iii. Use caching (sometimes)
+    iv. use async (occasionally)
+  4. Repeat!
+  
+* shinyloadtest - generates large amounts of realistic traffic to your app, then analyze latency
+  1. Run of deploy your app
+  2. Record an archetypal user session using shinyloadtest
+  3. Playback the recording with your desired level of concurrency
+  4. Analyze the data
+  
+  
+* Doing work ahead of time
+  - If preformance matters, avoid loading raw data in shiny, instead preprocess the data into a form shiny can read fast
+  - feather is a much faster method for reading data than csv
+  
+  * Plot caching
+       A app is a good candidate for plot caching if:
+        1. the app has plot outputs that are time consuming to generate
+        2. These plots are a significant fraction of the total amount of time the app spends thinking
+        3. Most user are likely to request the same few plots 
+      - use `renderCachedPlot` instead of `renderPlot` using the option `cacheKeyExpr`
+  
