@@ -158,7 +158,32 @@ new in v1.7.0
   * Custumizable emails
   
 
-### 
+### Configuration Management tools for the R Admin
+**Kelly O'Bryant**
+
+R Admin - A data scientists who has crawled into doing more IT-like work
+
+R Admin Goals:
+  1. Legitimacy - Get R recognized as an analytic standard
+  2. Competencies - Understand and manage R tooling
+  3. Adoption - Rely on integrated R base solutions
+  
+The value of a sandbox:
+  1. Showcase the R toolchain
+  2. Hands-on experience with analytic infrastructure
+  3. Discover organization-specific solutions 
+  
+Ultimate Sandboxes - Reproduce custome analytic environments on demand with:
+  **DevOps Flavor & Configuration Managament tools**
+  1. Puppet
+  2. Ansible
+  **Ask your IT group what tool they use**
+  
+Ansible:
+  * Server Management (SSH or an API)
+  * Rich Module Ecosystem
+  * Write playbooks in YAML
+  `$ sudo pip install ansible`
 
 
 
