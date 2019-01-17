@@ -186,6 +186,19 @@ Ansible:
   `$ sudo pip install ansible`
 
 
+### full_join - The role of data in reuniting families
+**Brooke Watson**
+
+Main role of data analysis in reunifications:
+  1. Organize/Find
+  2. Validate/Ask
+  3. Describe/Understand
+  
+**The data souce is an important as the data itself**
+
+
+
+
 
 
   
