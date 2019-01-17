@@ -79,4 +79,88 @@ knitr::opts_chunk$set(echo = TRUE)
         2. These plots are a significant fraction of the total amount of time the app spends thinking
         3. Most user are likely to request the same few plots 
       - use `renderCachedPlot` instead of `renderPlot` using the option `cacheKeyExpr`
+      
+      
+
+## Session 1
+
+### Push straight to prod - API Development with R and Tensorflow at T-mobile
+**Heather Nolis and Jacqueline Nolis**
+
+What does it mean to put something into production?
+Analysis - Running code once to produce a result
+Build - Writing code that is continuously running
+
+Putting code into production is letting customers interact with data
+
+Project: AL @ T-mobile
+
+Goal: Use machine learning to improve the customer experience
+
+Scenario: Customer sends messages
+Goal: Prep customer care agent before first response: Current bill status
+Method: Classigy the message with machine learning. 
+
+
+MOdel building workflow:
+  1. rmarkdown for explotatory analysis
+  2. Save the model to flat files (and lof the build with rmarkdown)
+  3. Show model off with a shiny demo
+  
+Choosing the language for prodution: **R**
+
+Treat R like a full programming language:
+
+  1. Commit is made to AI repo
+  2. Jenkins builds the image
+  3. Marathon orchestrates container deployment
+  4. Mesos pushes to prodcution
+  
+Build the model into a plumber API!!
+
+Behold: containers
+  * Dockerfile - build instructions
+  * Umage - the result of the docker file
+  
+Lessons Learned:
+ * R & plumber close to parity with pyrhing and flask
+ * R advantageous for quick data exploration
+ * Language was never the project failpoint
+ 
+### R in production 
+**Mark Sellors**
+
+*All of the technical barriers to running R in production are easy to overcome. It's the cultural barriers that slow us down.*
+
+What is "production" anyway?
+ -- "Production" is anything that is run repeatedly and that the business relies on
+
+*R is great in production*
+
+How do we get there?
+
+Two paths to get R in production:
+
+  1. Left hand path - the path of magic
+  2. Right hand path - Getting the business to trust your work
+  
+*data science != software engineering*
+
+*Production is a team sport*
+
+
+### RStudio Connect: Past, Present, and Future
+**Jeff Allen**
+
+new in v1.7.0
+  * programmable deployment
+  * Content instrementations
+  * Custumizable emails
+  
+
+### 
+
+
+
+
   
