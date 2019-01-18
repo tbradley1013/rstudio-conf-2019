@@ -197,6 +197,33 @@ Main role of data analysis in reunifications:
 **The data souce is an important as the data itself**
 
 
+### Melt the clock - tidy time series analysis
+**Earo Wang**
+
+2 packages:
+  1. tsibble
+  2. fable
+  
+3 big ideas:
+  1. tsibble
+  2. mable
+  3. fable
+
+tsibble - a modern reimagining of time series
+
+tsibble components:
+  1. index - defines time
+  2. key - defines series
+
+`fill_gaps` - can reomve connectinos between separate time points that have missing data/gaps in the data
+
+`slide`, `tile`, and `stretch` for rolling functions. 
+
+fable is a tidy replacement for forecast
+
+fable is like a fable - it is never true but it tells you something useful
+
+mable is the output class of the `fable::model()`
 
 
 
